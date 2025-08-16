@@ -36,4 +36,7 @@
 /cache              ext4      /dev/block/bootdevice/by-name/cache              flags=display="Cache";backup=1
 
 # USB OTG
-/usb-otg        auto                /dev/block/sdg1                    flags=display="USB-OTG";storage;wipeingui;removable
+/usb-otg       vfat   /dev/block/sdg                    /dev/block/sdg1       flags=display="USB-OTG";storage;wipeingui;removable
+
+# SDCARD
+/external_sd   vfat   /dev/block/mmcblk1p1               /dev/block/mmcblk1   flags=display="Micro SDcard";storage;wipeingui;removable;encryptable=footer;length=-16384
