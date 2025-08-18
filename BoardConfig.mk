@@ -58,6 +58,12 @@ TW_DEFAULT_BRIGHTNESS := 255
 TW_FRAMERATE := 120
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
+# Status Bar
+TW_STATUS_ICONS_ALIGN := center
+TW_CUSTOM_CPU_POS := "50"
+TW_CUSTOM_CLOCK_POS := "300"
+TW_CUSTOM_BATTERY_POS := "750"
+
 # Commandline
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image console=null bootconfig androidboot.hardware=qcom hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 androidboot.init_fatal_panic=true androidboot.selinux=permissive loop.max_part=7
 
