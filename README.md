@@ -4,7 +4,7 @@
  - [Fernanda Silva](https://github.com/DevzPlayer)
  - [ErickM55](https://github.com/Samy-Snap)
  - [Pratik](https://github.com/console-ramoops)
-
+ - [Subham Nayak](https://github.com/Ma445-cell)
 
 ## Support
  - [Telegram](https://t.me/M55_5g)
