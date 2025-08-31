@@ -4,11 +4,12 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# ALL PBRP RELATED THINGS START WITH PB, ALL TWRP RELATED THINGS ARE USED FOR TWRP, SHRP, AND OFRP IN ABDROID 12.1 MANIFESTS
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_m55xq.mk
+    $(LOCAL_DIR)/twrp_m55xq.mk \
+    $(LOCAL_DIR)/pb_m55xq.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_m55xq-user \
-    twrp_m55xq-userdebug \
-    twrp_m55xq-eng
+    twrp_m55xq-eng \
+    pb_m55xq-eng
