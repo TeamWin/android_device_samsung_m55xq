@@ -28,14 +28,13 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 # Additional
 TARGET_USES_UEFI := true
 TARGET_IS_64_BIT := true
-TARGET_USES_64_BIT_BINDER := true
+TARGET_USES_64_BIT_BINDER := true # For android-12.1 and below
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
 
 # Board
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_NO_RADIOIMAGE := true
-BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
@@ -58,14 +57,26 @@ TW_DEFAULT_BRIGHTNESS := 255
 TW_FRAMERATE := 120
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
-# Status Bar
+# Status Bar UI
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := "50"
 TW_CUSTOM_CLOCK_POS := "300"
 TW_CUSTOM_BATTERY_POS := "750"
 
-# Commandline
-BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image console=null bootconfig androidboot.hardware=qcom hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 androidboot.init_fatal_panic=true androidboot.selinux=permissive loop.max_part=7
+# Cmdline
+BOARD_KERNEL_CMDLINE :=  \
+	video=vfb:640x400,bpp=32,memsize=3072000 \
+	printk.devkmsg=on \
+	firmware_class.path=/vendor/firmware_mnt/image \
+	onsole=null \
+	bootconfig \
+	androidboot.hardware=qcom \
+	hardware=qcom \
+	androidboot.memcg=1 \
+	androidboot.usbcontroller=a600000.dwc3 \
+	androidboot.init_fatal_panic=true \
+	androidboot.selinux=permissive \
+	loop.max_part=7
 
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
@@ -88,9 +99,6 @@ BOARD_MKBOOTIMG_ARGS:= \
 --header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
 --dtb=$(TARGET_PREBUILT_DTB) 
 
-# Custom Bootimg
-#BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
-
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 112070656
@@ -110,11 +118,16 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
+
+# File System & Storage
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+TW_SKIP_ADDITIONAL_FSTAB := true
+TW_USE_EXTERNAL_STORAGE := true
 TARGET_USES_MKE2FS := true 
 TW_INCLUDE_NTFS_3G := true
-#BOARD_RAMDISK_USE_LZMA := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -134,35 +147,32 @@ BOARD_USES_METADATA_PARTITION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 
-# TWRP Configuration
+# USB
+TW_USE_NEW_MINADBD := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+# Misc
+TW_INCLUDE_REPACKTOOLS := true
 TW_EXTRA_LANGUAGES := true
+TW_INCLUDE_LPTOOLS := true
+TW_INCLUDE_LPDUMP := true
+
+# TWRP Configuration
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_USE_EXTERNAL_STORAGE := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_APEX := true
 TW_NO_BIND_SYSTEM := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
-TW_INCLUDE_LIBRESETPROP := true
-TW_NO_LEGACY_PROPS := true
-TW_USE_NEW_MINADBD := true
-TARGET_USES_MKE2FS := true
-TW_SKIP_ADDITIONAL_FSTAB := true
-TW_INCLUDE_LPDUMP := true
-TW_INCLUDE_LPTOOLS := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_NO_HAPTICS := true
-TW_NO_REBOOT_BOOTLOADER := true
-TW_INCLUDE_FASTBOOTD := true
-TW_HAS_DOWNLOAD_MODE := true
-#TW_USE_LEGACY_BATTERY_SERVICES := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone50/temp"
 TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery/capacity"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
-TW_DEVICE_VERSION := SavedByLight_Official_Stable
-MAINTAINER := SavedByLight
+
+# Samsung
+TW_NO_REBOOT_BOOTLOADER := true
+TW_USE_SAMSUNG_HAPTICS := true
+TW_INCLUDE_FASTBOOTD := true
+TW_HAS_DOWNLOAD_MODE := true
 
 # Copy Out 
 TARGET_COPY_OUT_VENDOR := vendor
@@ -173,6 +183,8 @@ TWRP_INCLUDE_LOGCAT := true
 TWRP_EVENT_LOGGING := true
 
 # Properties
+TW_NO_LEGACY_PROPS := true
+TW_INCLUDE_LIBRESETPROP := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
@@ -180,9 +192,20 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 PRODUCT_FULL_TREBLE := true
 
-# Skyhawk Recovery
-SHRP_MAINTAINER := SavedByLight
+# Skyhawk Recovery - ONLY FOR SKYHAWK RECOVERY PROJECT BUILDING
 SHRP_DARK := true
-SHRP_FLASH_MAX_BRIGHTNESS := 200
+SHRP_FLASH_MAX_BRIGHTNESS := 500
 SHRP_DEVICE_CODE := m55xq
 SHRP_FLASH := 1
+
+# PBRP- ONLY FOR PITCH BLACK RECOVERY PROJECT BUILDING
+PB_TORCH_PATH := "/sys/devices/virtual/camera/flash/rear_flash"
+PB_TORCH_MAX_BRIGHTNESS := 1
+
+# Version/Maintainer
+TW_DEVICE_VERSION := Pre-Release 009
+SHRP_MAINTAINER := SavedByLight
+MAINTAINER := SavedByLight
+
+# For testing only
+BETA_BUILD := true
