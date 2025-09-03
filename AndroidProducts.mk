@@ -8,8 +8,6 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_m55xq.mk \
-    $(LOCAL_DIR)/pb_m55xq.mk
 
 COMMON_LUNCH_CHOICES := \
     twrp_m55xq-eng \
-    pb_m55xq-eng
