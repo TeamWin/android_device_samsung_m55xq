@@ -1,10 +1,11 @@
 # Android device tree for samsung SM-M556B (m55xq)
 
-## Testers
- - [Fernanda Silva](https://github.com/DevzPlayer)
- - [ErickM55](https://github.com/Samy-Snap)
- - [Pratik](https://github.com/console-ramoops)
- - [Subham Nayak](https://github.com/Ma445-cell)
+## Contributors
+ - [Fernanda Silva](https://github.com/DevzPlayer) - Tester
+ - [ErickM55](https://github.com/Samy-Snap) - Tester
+ - [Pratik](https://github.com/console-ramoops) - Tester
+ - [Subham Nayak](https://github.com/Ma445-cell) - Tester
+ - [cd-crypton](https://github.com/cd-crypton) - Thanks to Carlo for creating the custom kernel
 
 ## Support
  - [Telegram](https://t.me/M55_5g)
