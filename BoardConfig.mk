@@ -7,6 +7,9 @@
 
 DEVICE_PATH := device/samsung/m55xq
 
+# twrp-14.1
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
@@ -28,7 +31,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 # Additional
 TARGET_USES_UEFI := true
 TARGET_IS_64_BIT := true
-TARGET_USES_64_BIT_BINDER := true # For android-12.1 and below
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
 
@@ -191,6 +193,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # Treble
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 PRODUCT_FULL_TREBLE := true
+
+# VNDK
+BOARD_VNDK_VERSION := current
 
 # Skyhawk Recovery - ONLY FOR SKYHAWK RECOVERY PROJECT BUILDING
 SHRP_DARK := true
