@@ -29,7 +29,4 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="m55xqddxx-user 12 SP2A.220305.013 M556BXXU3AXJA release-keys"
-
-BUILD_FINGERPRINT := samsung/m55xqddxx/m55xq:12/SP2A.220305.013/M556BXXU3AXJA:user/release-keys
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/m55xq/recovery/root,recovery/root)
