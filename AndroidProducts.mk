@@ -10,4 +10,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_m55xq.mk \
 
 COMMON_LUNCH_CHOICES := \
-    twrp_m55xq-eng \
+    twrp_m55xq-ap2a-eng \
