@@ -11,6 +11,7 @@ DEVICE_PATH := device/samsung/m55xq
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # For building with minimal manifest
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
