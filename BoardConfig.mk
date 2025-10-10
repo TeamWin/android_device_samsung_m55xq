@@ -143,6 +143,7 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # Encryption
+TW_INCLUDE_CRYPTO := true
 BOARD_USES_METADATA_PARTITION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -203,7 +204,7 @@ PB_TORCH_PATH := "/sys/devices/virtual/camera/flash/rear_flash"
 PB_TORCH_MAX_BRIGHTNESS := 1
 
 # Version/Maintainer
-TW_DEVICE_VERSION := SavedByLight Stable
+TW_DEVICE_VERSION := SavedByLight Stable V2.0
 SHRP_MAINTAINER := SavedByLight
 MAINTAINER := SavedByLight
 
