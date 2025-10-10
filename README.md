@@ -3,9 +3,10 @@
 ## Contributors
  - [Subham Nayak](https://github.com/Ma445-cell) - MAIN Tester - Crypto Build Tester
  - [Fernanda Silva](https://github.com/DevzPlayer) - Tester
- - [ErickM55](https://github.com/Samy-Snap) - Tester
+ - [Sammy-M55xq](https://github.com/Sammy-M55xq) - Tester
  - [Pratik](https://github.com/console-ramoops) - Tester
  - [cd-crypton](https://github.com/cd-crypton) - Thanks to Carlo for creating the custom kernel
+  - [Maxim](https://github.com/Maxim-Root) - Assistant Developer
 
 ## Support
  - [Telegram](https://t.me/M55_5g)
