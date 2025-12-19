@@ -33,6 +33,7 @@ on init
     setprop prepdecrypt.setpatch true
     setprop prepdecrypt.loglevel 2
     setprop logd.ready true
+    start health-hal-2-1
 
 on boot 
     start health-hal-2-1
