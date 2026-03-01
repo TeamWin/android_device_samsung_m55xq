@@ -61,7 +61,7 @@ BOARD_KERNEL_CMDLINE :=  \
 	video=vfb:640x400,bpp=32,memsize=3072000 \
 	printk.devkmsg=on \
 	firmware_class.path=/vendor/firmware_mnt/image \
-	onsole=null \
+	console=null \
 	bootconfig \
 	androidboot.hardware=qcom \
 	hardware=qcom \
