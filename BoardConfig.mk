@@ -21,7 +21,6 @@ TARGET_CPU_VARIANT_RUNTIME := kryo300
 # Additional
 TARGET_USES_UEFI := true
 TARGET_IS_64_BIT := true
-TARGET_USES_64_BIT_BINDER := true # For android-12.1 and below
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
 
@@ -103,7 +102,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system vendor product odm system_ext
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm system_ext vendor_dlkm
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Recovery
