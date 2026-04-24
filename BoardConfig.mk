@@ -229,7 +229,7 @@ OF_FIX_DECRYPTION_ON_DATA_MEDIA := 1
 OF_UNBIND_SDCARD_F2FS := 1
 
 # Version/Maintainer
-TW_DEVICE_VERSION := SavedByLight Stable V2.0
+TW_DEVICE_VERSION := SavedByLight A16-Beta
 SHRP_MAINTAINER := SavedByLight
 OF_MAINTAINER := SavedByLight
 MAINTAINER := SavedByLight
