@@ -12,9 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common twrp stuff.
 $(call inherit-product-if-exists, vendor/twrp/config/common.mk)
 
-# Inherit some common pbrp stuff.
-$(call inherit-product-if-exists, vendor/pb/config/common.mk)
-
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
