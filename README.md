@@ -1,4 +1,4 @@
-# Android device tree for samsung SM-M556B (m55xq)
+# Android device tree for samsung SM-M556B  TWRP-16-TEST
 
 ## Contributors
  - [Subham Nayak](https://github.com/Ma445-cell) - MAIN Tester - Crypto Build Tester
