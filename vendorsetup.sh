@@ -77,6 +77,10 @@ export FOX_RECOVERY_SYSTEM_PARTITION=/dev/block/mapper/system
 export FOX_RECOVERY_VENDOR_PARTITION=/dev/block/mapper/vendor
 export FOX_TARGET_DEVICES="m55,m55xq"
 
+# R12 build vars
+export FOX_R12=1
+export FOX_ADVANCED_SECURITY=1
+
 	# Let's see which are our build vars
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
         export | grep "FOX" >> $FOX_BUILD_LOG_FILE
